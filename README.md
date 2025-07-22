@@ -1,80 +1,139 @@
-🚗 Used Car Price Predictor
-An AI-powered web application that predicts the resale price of used cars based on key attributes such as brand, age, fuel type, and transmission. Built using XGBoost and Streamlit, with a robust ML pipeline.
+# 🚗 Used Car Price Predictor
 
-🔍 Project Overview
-This project provides a solution for estimating the fair market price of a used car based on key features. It includes:
+An AI-powered web application that predicts the resale price of used cars based on key attributes such as brand, age, fuel type, and transmission. Built using **XGBoost** and **Streamlit**, supported by a robust, modular machine learning pipeline.
 
-Cleaned real-world data scraped from CarDekho
+---
 
-A feature-engineered pipeline using scikit-learn
+## 🔍 Project Overview
 
-XGBoost regression model with hyperparameter tuning
+This project offers a smart and practical solution for estimating the fair resale value of used cars, making use of historical data and modern machine learning techniques.
 
-A Streamlit web interface for interactive predictions
+* Real-world data cleaned and processed from **CarDekho** datasets.
+* Feature-engineered pipeline using **scikit-learn** transformers.
+* XGBoost regressor model with tuned hyperparameters for performance.
+* **Streamlit**-based interactive web UI for end-user predictions.
 
-✅ Key Features
-Predict used car resale prices based on:
+---
 
-Car company, model, age, kilometers driven, fuel type, transmission, and ownership history
+## ✅ Key Features
 
-Preprocessed and feature-engineered using consistent pipelines
+* **Interactive prediction**: Estimate car resale price based on:
 
-Trained and evaluated using robust metrics (RMSE, MAE, R²)
+  * Company
+  * Model
+  * Age (years old)
+  * Kilometers driven
+  * Fuel type
+  * Transmission
+  * Ownership status
+* **Modular pipeline** for preprocessing and encoding
+* Clean model inference pipeline using `xgb_model.pkl` and `encoder.pkl`
+* Optimized for **speed, accuracy**, and **maintainability**
+* **Streamlit UI** for user-friendly interaction and real-time predictions
 
-Web UI for interactive input and predictions
+---
 
+## 🧱 Tech Stack
 
-🧱 Project Structure
+* **Python 3.x** — Programming Language
+* **Pandas, NumPy** — Data Manipulation
+* **Scikit-learn** — Preprocessing Pipelines
+* **XGBoost** — Gradient Boosting Regressor
+* **Streamlit** — Web Application Framework
+
+---
+
+## 🧱 Project Structure
+
+```bash
 used_car_price_predictor/
-├── app.py                    # Streamlit app
-├── main.py                   # Training + evaluation script
+├── app.py                    # Streamlit app interface
+├── main.py                   # Model training + evaluation
 ├── models/
 │   ├── xgb_model.pkl         # Trained XGBoost model
-│   └── encoder.pkl           # Preprocessing pipeline
+│   └── encoder.pkl           # ColumnTransformer pipeline
 ├── data/
 │   ├── car_details_from_car_dekho.csv
 │   └── Car_details_v3.csv
 ├── src/
-│   ├── cleaning.py           # Data cleaning
-│   ├── features.py           # Feature transformations
-│   └── model.py              # Model pipeline
-├── requirements.txt
-├── README.md
-└── .gitignore
+│   ├── cleaning.py           # Data cleaning functions
+│   ├── features.py           # Feature engineering logic
+│   └── model.py              # Model training and evaluation
+├── requirements.txt          # Python dependencies
+├── README.md                 # Project documentation
+└── .gitignore                # Ignored files and folders
+```
 
-🔧 Installation & Running Locally
+---
 
-1. Clone the repository:
+## 🔧 Installation & Running Locally
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/khussh3105/used-car-price-predictor.git
 cd used_car_price_predictor
+```
 
-2. Install dependencies:
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Train the model:
+### 3. Train the model
+
+```bash
 python main.py
+```
 
-4. Launch the app:
+### 4. Launch the app
+
+```bash
 streamlit run app.py
+```
 
+---
 
-📊 Model Performance
+## 📊 Model Performance
+
 | Metric | Score    |
 | ------ | -------- |
 | RMSE   | **0.03** |
 | MAE    | **0.02** |
 | R²     | **0.87** |
 
+Model performance was measured on a held-out test dataset using the cleaned and preprocessed input features.
 
-🧠 Challenges Faced
-Dealing with inconsistencies in scraped real-world car data
+---
 
-Building a clean, reusable ML pipeline for production-ready predictions
+## 🤔 Challenges Faced
 
-Avoiding overfitting during hyperparameter tuning
+* Cleaning and standardizing scraped real-world car data with inconsistencies
+* Building a scalable, modular machine learning pipeline
+* Avoiding overfitting while tuning XGBoost hyperparameters
+* Designing a user interface that adapts dynamically to car brands and models
 
-Designing a UI that supports multiple car brands and models smoothly
+---
 
-👨‍💻 Author
-Built with precision by Khush Samir Kothari 
-Masters of Computer Science | University of Sydney.
+## ✨ Future Enhancements
+
+* Add support for additional features such as car color, insurance status, and more detailed ownership history
+* Enable real-time logging of user predictions for insights
+* Deploy the application on a cloud platform (e.g., Heroku, Render) with versioned API endpoints
+* Improve model performance with advanced ensemble methods
+* Integrate SHAP or LIME for model explainability
+* Add a contact form or feedback mechanism in the Streamlit UI
+
+---
+
+## 🗕️ Live App
+
+Try the live version here: [Used Car Price Predictor](https://used-car-price-predictor.streamlit.app)
+
+---
+
+## 👨‍💼 Author
+
+Built with precision by **Khush Samir Kothari**
+Pursuing Masters of Computer Science at University of Sydney (USYD)
