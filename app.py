@@ -1,12 +1,20 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import locale
 from src.cleaning import clean_data
 from src.features import get_feature_columns
 
-# Set locale for Indian currency formatting
-locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8')
+# --- Indian currency formatting without locale ---
+def format_inr(value):
+    s = str(int(value))
+    if len(s) <= 3:
+        return '₹ ' + s
+    r = ''
+    for i, digit in enumerate(reversed(s[:-3])):
+        if i % 2 == 0 and i != 0:
+            r = ',' + r
+        r = digit + r
+    return '₹ ' + r + ',' + s[-3:]
 
 # --- Load and clean data ---
 df_raw = pd.read_csv("data/car_details_from_car_dekho.csv")
@@ -24,7 +32,7 @@ ownerships = sorted(df['owner'].unique())
 
 # --- Load trained model and encoder pipeline ---
 model = joblib.load("models/xgb_model.pkl")
-encoder = joblib.load("models/encoder.pkl")  # This should be the fitted ColumnTransformer
+encoder = joblib.load("models/encoder.pkl")  # Fitted ColumnTransformer
 
 # --- Streamlit UI ---
 st.title("Used Car Price Predictor")
@@ -55,7 +63,7 @@ if st.button("Predict Price"):
         input_df = pd.DataFrame([input_dict])[get_feature_columns()]
         input_encoded = encoder.transform(input_df)
         prediction = model.predict(input_encoded)[0]
-        formatted_price = f"₹ {locale.format_string('%d', int(prediction), grouping=True)}"
+        formatted_price = format_inr(prediction)
 
         st.success(f"Estimated Selling Price: **{formatted_price}**")
     except Exception as e:
