@@ -15,31 +15,13 @@ This project offers a smart and practical solution for estimating the fair resal
 
 ---
 
-## ✅ Key Features
+## 💻 Tech Stack
 
-* **Interactive prediction**: Estimate car resale price based on:
-
-  * Company
-  * Model
-  * Age (years old)
-  * Kilometers driven
-  * Fuel type
-  * Transmission
-  * Ownership status
-* **Modular pipeline** for preprocessing and encoding
-* Clean model inference pipeline using `xgb_model.pkl` and `encoder.pkl`
-* Optimized for **speed, accuracy**, and **maintainability**
-* **Streamlit UI** for user-friendly interaction and real-time predictions
-
----
-
-## 🧱 Tech Stack
-
-* **Python 3.x** — Programming Language
-* **Pandas, NumPy** — Data Manipulation
-* **Scikit-learn** — Preprocessing Pipelines
-* **XGBoost** — Gradient Boosting Regressor
-* **Streamlit** — Web Application Framework
+* **Python 3.10**
+* **pandas**, **scikit-learn**, **XGBoost**
+* **Streamlit** for web interface
+* **Joblib** for model serialization
+* **Git + GitHub** for version control
 
 ---
 
@@ -107,7 +89,7 @@ Model performance was measured on a held-out test dataset using the cleaned and 
 
 ---
 
-## 🤔 Challenges Faced
+## 🧐 Challenges Faced
 
 * Cleaning and standardizing scraped real-world car data with inconsistencies
 * Building a scalable, modular machine learning pipeline
@@ -127,13 +109,13 @@ Model performance was measured on a held-out test dataset using the cleaned and 
 
 ---
 
-## 🗕️ Live App
+## 📅 Live App
 
-Try the live version here: [Used Car Price Predictor](https://used-car-price-predictor.streamlit.app)
+Try the live version here: [Used Car Price Predictor](https://used-car-price-predictor-xtakff84wakedxtmxa82ax.streamlit.app/)
 
 ---
 
-## 👨‍💼 Author
+## 🧑‍💻 Author
 
 Built with precision by **Khush Samir Kothari**
 Pursuing Masters of Computer Science at University of Sydney (USYD)
