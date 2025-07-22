@@ -8,8 +8,8 @@ A more thorough understanding of the data is made possible by the overlapping bu
 
 Features
 Preprocessing and data cleaning; feature engineering for engine, mileage, and category encodings
-XGBoostRegressor is used for model training. RMSE, MAE, and R2 Score are used for evaluation.
-StreamlitDataset was used to create the interactive prediction interface. 
+XGBoostRegressor and GridSearchCV with Hyper-Parameters is used for model training. RMSE, MAE, and R2 Score are used for evaluation.
+Streamlit was used to create the interactive prediction interface. 
 
 
 Dataset
