@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files
+data/raw/
+data/*.csv
+!data/car_details_from_car_dekho.csv
+!data/Car_details_v3.csv
+
+# Model files
+models/
+*.pkl
+*.joblib
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# VSCode
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Python cache
+*.cache
+*.pyo
+*.pyd
